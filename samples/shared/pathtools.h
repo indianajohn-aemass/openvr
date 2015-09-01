@@ -3,6 +3,18 @@
 
 #include <string>
 
+#ifndef WIN32
+#define sprintf_s(buffer, buffer_size, stringbuffer, ...) (sprintf(buffer, stringbuffer, __VA_ARGS__))
+#define vsprintf_s vsprintf
+#define APIENTRY
+#define stricmp strcasecmp
+#define OutputDebugStringA(buffer)
+#include <unistd.h>
+#define fopen_s(pFile,filename,mode) ((*(pFile))=fopen((filename),(mode)))==NULL
+#define errno_t int
+#endif
+
+
 /** Returns the path (including filename) to the current executable */
 std::string Path_GetExecutablePath();
 

@@ -2,7 +2,11 @@
 #include "pathtools.h"
 //#include "hmdplatform_private.h"
 //#include "vrcommon/strtools.h"
-
+#ifdef MACOS
+#ifndef OSX
+#define OSX
+#endif
+#endif
 #if defined( _WIN32)
 #include <Windows.h>
 #include <direct.h>

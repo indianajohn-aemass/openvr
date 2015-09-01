@@ -3,7 +3,11 @@
 #include <SDL.h>
 #include <GL/glew.h>
 #include <SDL_opengl.h>
+#ifdef MACOS
+#include <OpenGL/glu.h>
+#else
 #include <gl/glu.h>
+#endif
 #include <stdio.h>
 #include <string>
 #include <cstdlib>
